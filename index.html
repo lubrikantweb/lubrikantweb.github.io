@@ -5,29 +5,26 @@
   <title>Lubrikant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    html, body {
-      margin: 0;
-      min-height: 100%;
-      background: #f7f3ea;
-    }
+ <style>
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: #f7f3ea;
+  }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      box-sizing: border-box;
-    }
+  body {
+    min-height: 100vh;
+    overflow: hidden;
+  }
 
-    img {
-      width: min(100%, 1400px);
-      height: auto;
-      display: block;
-      transform: translateX(-110px);
-    }
-  </style>
+  img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 58% center;
+    display: block;
+  }
+</style>
 </head>
 
 <body>
