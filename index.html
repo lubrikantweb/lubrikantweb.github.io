@@ -106,6 +106,17 @@
       letter-spacing: 0.5px;
     }
 
+    .pixel-art {
+      position: fixed;
+      right: 28px;
+      bottom: 28px;
+      z-index: 2;
+      width: clamp(120px, 18vw, 260px);
+      height: auto;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+
     .signup {
       position: fixed;
       left: 18px;
@@ -203,7 +214,13 @@
 
       .page {
         min-height: 100vh;
-        padding-bottom: 160px;
+        padding-bottom: 260px;
+      }
+
+      .pixel-art {
+        right: 12px;
+        bottom: 150px;
+        width: clamp(110px, 34vw, 180px);
       }
 
       .signup {
@@ -247,6 +264,8 @@
         </textPath>
       </text>
     </svg>
+
+    <img class="pixel-art" src="pixelart.png" alt="Lubrikant pixel art">
 
   </main>
 
