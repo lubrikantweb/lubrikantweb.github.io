@@ -64,11 +64,8 @@
 
     .nav-scatter {
       position: fixed;
-      top: 82px;
-      left: 0;
-      right: 0;
-      height: 120px;
-      z-index: 2;
+      inset: 0;
+      z-index: 4;
       pointer-events: none;
     }
 
@@ -77,36 +74,76 @@
       pointer-events: auto;
       white-space: nowrap;
       font-size: 16px;
+      transition:
+        top 1.35s cubic-bezier(.2, .9, .25, 1.15),
+        left 1.35s cubic-bezier(.2, .9, .25, 1.15),
+        right 1.35s cubic-bezier(.2, .9, .25, 1.15),
+        transform 1.35s cubic-bezier(.2, .9, .25, 1.15);
     }
 
     .about {
-      top: 10px;
+      top: 92px;
       left: 18px;
       transform: rotate(-8deg);
+      transition-delay: 0s;
     }
 
     .cv {
-      top: 38px;
+      top: 120px;
       left: 20%;
       transform: rotate(5deg);
+      transition-delay: .08s;
     }
 
     .soundcloud {
-      top: 12px;
+      top: 94px;
       left: 40%;
       transform: rotate(-3deg);
+      transition-delay: .16s;
     }
 
     .living-room {
-      top: 50px;
+      top: 132px;
       left: 58%;
       transform: rotate(7deg);
+      transition-delay: .24s;
     }
 
     .blog {
-      top: 16px;
-      right: 32px;
+      top: 98px;
+      left: calc(100% - 82px);
       transform: rotate(-10deg);
+      transition-delay: .32s;
+    }
+
+    .nav-scatter.piled .about {
+      top: calc(100vh - 72px);
+      left: 26%;
+      transform: rotate(-17deg);
+    }
+
+    .nav-scatter.piled .cv {
+      top: calc(100vh - 58px);
+      left: 33%;
+      transform: rotate(9deg);
+    }
+
+    .nav-scatter.piled .soundcloud {
+      top: calc(100vh - 86px);
+      left: 42%;
+      transform: rotate(-8deg);
+    }
+
+    .nav-scatter.piled .living-room {
+      top: calc(100vh - 64px);
+      left: 50%;
+      transform: rotate(14deg);
+    }
+
+    .nav-scatter.piled .blog {
+      top: calc(100vh - 78px);
+      left: 68%;
+      transform: rotate(-13deg);
     }
 
     .pixel-art {
@@ -191,10 +228,7 @@
 
       .nav-scatter {
         position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        height: auto;
+        inset: auto;
         padding: 0;
         display: flex;
         flex-wrap: wrap;
@@ -208,6 +242,7 @@
         font-size: 15px;
         line-height: 1.15;
         white-space: normal;
+        transition: none;
       }
 
       .about {
@@ -277,7 +312,7 @@
       </text>
     </svg>
 
-    <nav class="nav-scatter">
+    <nav class="nav-scatter" id="navScatter">
       <a class="about" href="about.html" target="_blank" rel="noopener noreferrer">ABOUT</a>
       <a class="cv" href="dj-events-cv.html" target="_blank" rel="noopener noreferrer">DJ / EVENTS CV</a>
       <a class="soundcloud" href="https://soundcloud.com/volte_face_bleed" target="_blank" rel="noopener noreferrer">MY MIXES</a>
@@ -297,5 +332,15 @@
       <button type="submit">Subscribe</button>
     </form>
   </section>
+
+  <script>
+    window.addEventListener("load", function () {
+      if (window.matchMedia("(max-width: 800px)").matches) return;
+
+      setTimeout(function () {
+        document.getElementById("navScatter").classList.add("piled");
+      }, 1800);
+    });
+  </script>
 </body>
 </html>
