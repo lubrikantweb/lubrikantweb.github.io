@@ -5,115 +5,126 @@
   <title>Lubrikant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-  html, body {
-    margin: 0;
-    min-height: 100%;
-    background: #f7f3ea;
-  }
+  <style>
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: #f7f3ea;
+    }
 
-  body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    box-sizing: border-box;
-  }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      box-sizing: border-box;
+    }
 
-  img {
-    width: min(100%, 1400px);
-    height: auto;
-    display: block;
-  }
-  .mailing-list-box {
-  position: fixed;
-  left: 50%;
-  bottom: 32px;
-  transform: translateX(-50%);
-  z-index: 10;
+    img {
+      width: min(100%, 1400px);
+      height: auto;
+      display: block;
+    }
 
-  width: min(90vw, 420px);
-  padding: 14px 16px;
+    .mailing-list-box {
+      position: fixed;
+      left: 50%;
+      bottom: 32px;
+      transform: translateX(-50%);
+      z-index: 10;
 
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 0, 0, 0.18);
-  border-radius: 999px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+      width: min(90vw, 420px);
+      padding: 14px 16px;
 
-  font-family: inherit;
-}
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 0, 0, 0.18);
+      border-radius: 999px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
 
-.mailing-list-box label {
-  display: block;
-  text-align: center;
-  margin-bottom: 8px;
-  font-size: 13px;
-  letter-spacing: 0.03em;
-}
+      font-family: inherit;
+    }
 
-.mailing-list-row {
-  display: flex;
-  gap: 8px;
-}
+    .mailing-list-box label {
+      display: block;
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+    }
 
-.mailing-list-row input[type="email"] {
-  flex: 1;
-  min-width: 0;
-  padding: 10px 12px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: 999px;
-  font: inherit;
-}
+    .mailing-list-row {
+      display: flex;
+      gap: 8px;
+    }
 
-.mailing-list-row button {
-  padding: 10px 14px;
-  border: 1px solid rgba(0, 0, 0, 0.35);
-  border-radius: 999px;
-  background: black;
-  color: white;
-  font: inherit;
-  cursor: pointer;
-}
+    .mailing-list-row input[type="email"] {
+      flex: 1;
+      min-width: 0;
+      padding: 10px 12px;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      border-radius: 999px;
+      font: inherit;
+    }
 
-.mailing-list-row button:hover {
-  opacity: 0.82;
-}
+    .mailing-list-row button {
+      padding: 10px 14px;
+      border: 1px solid rgba(0, 0, 0, 0.35);
+      border-radius: 999px;
+      background: black;
+      color: white;
+      font: inherit;
+      cursor: pointer;
+    }
 
-@media (max-width: 600px) {
-  .mailing-list-box {
-    bottom: 18px;
-    width: min(92vw, 360px);
-    border-radius: 22px;
-  }
+    .mailing-list-row button:hover {
+      opacity: 0.82;
+    }
 
-  .mailing-list-row {
-    flex-direction: column;
-  }
+    @media (max-width: 600px) {
+      .mailing-list-box {
+        bottom: 18px;
+        width: min(92vw, 360px);
+        border-radius: 22px;
+      }
 
-  .mailing-list-row button {
-    width: 100%;
-  }
-}
-</style>
+      .mailing-list-row {
+        flex-direction: column;
+      }
+
+      .mailing-list-row button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <img src="lubrikant-holding.jpeg" alt="Lubrikant holding page">
-  <form
-  action="https://buttondown.com/api/emails/embed-subscribe/Lubrikant"
-  method="post"
-  class="embeddable-buttondown-form"
->
-  <label for="bd-email">Enter your email</label>
-  <input type="email" name="email" id="bd-email" />
-  <input type="submit" value="Subscribe" />
-  <p>
-    <a href="https://buttondown.com/refer/Lubrikant" target="_blank">
-      
-    </a>
-  </p>
-</form>
+
+  <div class="mailing-list-box">
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/Lubrikant"
+      method="post"
+      class="embeddable-buttondown-form"
+    >
+      <label for="bd-email">Enter your email</label>
+
+      <div class="mailing-list-row">
+        <input
+          type="email"
+          name="email"
+          id="bd-email"
+          placeholder="email address"
+          required
+        >
+
+        <input type="hidden" value="1" name="embed">
+
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
