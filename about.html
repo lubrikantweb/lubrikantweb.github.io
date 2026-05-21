@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lubrikant — About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: #f7f3ea;
+    }
+
+    body {
+      min-height: 100vh;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.25;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .background {
+      position: fixed;
+      inset: 0;
+      background-image: url("lubrikant-holding.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding: 18px 18px 140px 18px;
+    }
+
+    a {
+      color: #111;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 42px;
+      transform: rotate(-5deg);
+    }
+
+    h1 {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 0 0 28px 0;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transform: rotate(2deg);
+      display: inline-block;
+    }
+
+    .about-text {
+      width: calc(100vw - 36px);
+      max-width: none;
+    }
+
+    .about-text p {
+      margin: 0 0 18px 0;
+      max-width: 900px;
+    }
+
+    .signup {
+      position: fixed;
+      left: 18px;
+      bottom: 16px;
+      z-index: 3;
+      max-width: 420px;
+      font-size: 15px;
+    }
+
+    .signup p {
+      margin: 0 0 6px 0;
+    }
+
+    .signup form {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .signup input {
+      width: 240px;
+      box-sizing: border-box;
+      font: inherit;
+      padding: 5px 7px;
+      border: 1px solid #111;
+      background: rgba(247, 243, 234, 0.75);
+      color: #111;
+    }
+
+    .signup button {
+      font: inherit;
+      padding: 5px 8px;
+      border: 1px solid #111;
+      background: rgba(247, 243, 234, 0.75);
+      color: #111;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        font-size: 15px;
+      }
+
+      .background {
+        background-size: cover;
+        background-position: center;
+      }
+
+      .page {
+        padding: 14px 12px 180px 12px;
+      }
+
+      .back-link {
+        margin-bottom: 34px;
+      }
+
+      .about-text {
+        width: calc(100vw - 24px);
+      }
+
+      .about-text p {
+        max-width: none;
+      }
+
+      .signup {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        max-width: none;
+      }
+
+      .signup form {
+        display: block;
+      }
+
+      .signup input,
+      .signup button {
+        width: 100%;
+        margin-bottom: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background"></div>
+
+  <main class="page">
+    <a class="back-link" href="index.html">← BACK</a>
+
+    <section class="about-text">
+      <h1>ABOUT</h1>
+
+      <p>
+        Lubrikant is the creative umbrella for Casper Clark AKA Volte-Face, a London based DJ and curator since 2006. Previously curating events and releasing music through my own BleeD imprint, I'm currently spending time developing new skills as well as putting out regular mixes on an experimental/ambient bent, more often than not.
+      </p>
+    </section>
+  </main>
+
+  <section class="signup">
+    <p>Subscribe for occasional updates.</p>
+
+    <form>
+      <input type="email" placeholder="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+</body>
+</html>
