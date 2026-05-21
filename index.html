@@ -27,19 +27,61 @@
       display: block;
     }
 
+    .soundcloud-box {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      z-index: 10;
+
+      width: min(340px, calc(100vw - 48px));
+
+      border-radius: 16px;
+      overflow: hidden;
+
+      background: rgba(247, 243, 234, 0.78);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+    }
+
+    .soundcloud-box iframe {
+      display: block;
+      width: 100%;
+      height: 120px;
+    }
+
+    .soundcloud-credit {
+      padding: 5px 8px 7px;
+      font-size: 10px;
+      color: #777;
+      line-break: anywhere;
+      word-break: normal;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+      font-weight: 100;
+    }
+
+    .soundcloud-credit a {
+      color: #777;
+      text-decoration: none;
+    }
+
+    .soundcloud-credit a:hover {
+      text-decoration: underline;
+    }
+
     .mailing-list-box {
-      bottom: 40px;
-      }
       position: fixed;
       left: 50%;
-      bottom: 32px;
+      bottom: 40px;
       transform: translateX(-50%);
-      z-index: 10;
+      z-index: 20;
 
       width: min(90vw, 420px);
       padding: 14px 16px;
 
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(247, 243, 234, 0.72);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(0, 0, 0, 0.18);
       border-radius: 999px;
@@ -68,6 +110,7 @@
       border: 1px solid rgba(0, 0, 0, 0.25);
       border-radius: 999px;
       font: inherit;
+      background: rgba(255, 255, 255, 0.72);
     }
 
     .mailing-list-row button {
@@ -85,6 +128,16 @@
     }
 
     @media (max-width: 600px) {
+      .soundcloud-box {
+        top: 14px;
+        left: 14px;
+        width: min(300px, calc(100vw - 28px));
+      }
+
+      .soundcloud-box iframe {
+        height: 100px;
+      }
+
       .mailing-list-box {
         bottom: 18px;
         width: min(92vw, 360px);
@@ -99,96 +152,40 @@
         width: 100%;
       }
     }
-
-  <label for="bd-email">Sporadic Transmissions</label>
-    background: rgba(247, 243, 234, 0.72);
-    .soundcloud-box {
-  position: fixed;
-  top: 24px;
-  left: 24px;
-  z-index: 10;
-
-  width: min(340px, calc(100vw - 48px));
-
-  border-radius: 16px;
-  overflow: hidden;
-
-  background: rgba(247, 243, 234, 0.78);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
-}
-
-.soundcloud-box iframe {
-  display: block;
-  width: 100%;
-  height: 120px;
-}
-
-.soundcloud-credit {
-  padding: 5px 8px 7px;
-  font-size: 10px;
-  color: #777;
-  line-break: anywhere;
-  word-break: normal;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-  font-weight: 100;
-}
-
-.soundcloud-credit a {
-  color: #777;
-  text-decoration: none;
-}
-
-.soundcloud-credit a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  .soundcloud-box {
-    top: 14px;
-    left: 14px;
-    width: min(300px, calc(100vw - 28px));
-  }
-
-  .soundcloud-box iframe {
-    height: 100px;
-  }
-}
   </style>
 </head>
 
 <body>
   <img src="lubrikant-holding.jpeg" alt="Lubrikant holding page">
-<div class="soundcloud-box">
-  <iframe
-    width="100%"
-    height="120"
-    scrolling="no"
-    frameborder="no"
-    allow="autoplay; encrypted-media"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2309946128&color=%23f7f3ea&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
-  </iframe>
 
-  <div class="soundcloud-credit">
-    <a href="https://soundcloud.com/volte_face_bleed" target="_blank">
-      Casper Clark / Volte-Face
-    </a>
-    ·
-    <a href="https://soundcloud.com/volte_face_bleed/nowherefast" target="_blank">
-      Nowhere Fast
-    </a>
+  <div class="soundcloud-box">
+    <iframe
+      width="100%"
+      height="120"
+      scrolling="no"
+      frameborder="no"
+      allow="autoplay; encrypted-media"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2309946128&color=%23f7f3ea&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+    </iframe>
+
+    <div class="soundcloud-credit">
+      <a href="https://soundcloud.com/volte_face_bleed" target="_blank">
+        Casper Clark / Volte-Face
+      </a>
+      ·
+      <a href="https://soundcloud.com/volte_face_bleed/nowherefast" target="_blank">
+        Nowhere Fast
+      </a>
+    </div>
   </div>
-</div>
+
   <div class="mailing-list-box">
     <form
       action="https://buttondown.com/api/emails/embed-subscribe/Lubrikant"
       method="post"
       class="embeddable-buttondown-form"
     >
-      <label for="bd-email">Enter your email</label>
+      <label for="bd-email">Sporadic Transmissions</label>
 
       <div class="mailing-list-row">
         <input
