@@ -14,193 +14,155 @@
 
     body {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.25;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .background {
+      position: fixed;
+      inset: 0;
+      background-image: url("lubrikant-holding.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
       box-sizing: border-box;
+      padding: 14px 18px 110px 18px;
     }
 
-    img {
-      width: min(100%, 1400px);
-      height: auto;
-      display: block;
+    .top-line {
+      max-width: 1100px;
     }
 
-    .soundcloud-box {
-      position: fixed;
-      top: 24px;
-      left: 24px;
-      z-index: 10;
-
-      width: min(340px, calc(100vw - 48px));
-
-      border-radius: 16px;
-      overflow: hidden;
-
-      background: rgba(247, 243, 234, 0.78);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+    nav {
+      display: inline;
     }
 
-    .soundcloud-box iframe {
-      display: block;
-      width: 100%;
-      height: 120px;
-    }
-
-    .soundcloud-credit {
-      padding: 5px 8px 7px;
-      font-size: 10px;
-      color: #777;
-      line-break: anywhere;
-      word-break: normal;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-      font-weight: 100;
-    }
-
-    .soundcloud-credit a {
-      color: #777;
-      text-decoration: none;
-    }
-
-    .soundcloud-credit a:hover {
+    nav a,
+    .main-text a,
+    .signup a {
+      color: #111;
       text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
     }
 
-    .mailing-list-box {
+    nav a {
+      margin-right: 10px;
+      white-space: nowrap;
+    }
+
+    .main-text {
+      display: inline;
+    }
+
+    .signup {
       position: fixed;
-      left: 50%;
-      bottom: 40px;
-      transform: translateX(-50%);
-      z-index: 20;
-
-      width: min(90vw, 420px);
-      padding: 14px 16px;
-
-      background: rgba(247, 243, 234, 0.72);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(0, 0, 0, 0.18);
-      border-radius: 999px;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
-
-      font-family: inherit;
+      left: 18px;
+      bottom: 16px;
+      z-index: 2;
+      max-width: 420px;
+      font-size: 15px;
     }
 
-    .mailing-list-box label {
-      display: block;
-      text-align: center;
-      margin-bottom: 8px;
-      font-size: 13px;
-      letter-spacing: 0.03em;
+    .signup p {
+      margin: 0 0 6px 0;
     }
 
-    .mailing-list-row {
+    .signup form {
       display: flex;
-      gap: 8px;
+      gap: 6px;
+      align-items: center;
     }
 
-    .mailing-list-row input[type="email"] {
-      flex: 1;
-      min-width: 0;
-      padding: 10px 12px;
-      border: 1px solid rgba(0, 0, 0, 0.25);
-      border-radius: 999px;
+    .signup input {
+      width: 240px;
+      box-sizing: border-box;
       font: inherit;
-      background: rgba(255, 255, 255, 0.72);
+      padding: 5px 7px;
+      border: 1px solid #111;
+      background: rgba(247, 243, 234, 0.75);
+      color: #111;
     }
 
-    .mailing-list-row button {
-      padding: 10px 14px;
-      border: 1px solid rgba(0, 0, 0, 0.35);
-      border-radius: 999px;
-      background: black;
-      color: white;
+    .signup button {
       font: inherit;
+      padding: 5px 8px;
+      border: 1px solid #111;
+      background: rgba(247, 243, 234, 0.75);
+      color: #111;
       cursor: pointer;
     }
 
-    .mailing-list-row button:hover {
-      opacity: 0.82;
-    }
-
-    @media (max-width: 600px) {
-      .soundcloud-box {
-        top: 14px;
-        left: 14px;
-        width: min(300px, calc(100vw - 28px));
+    @media (max-width: 700px) {
+      body {
+        font-size: 15px;
       }
 
-      .soundcloud-box iframe {
-        height: 100px;
+      .page {
+        padding: 12px 12px 150px 12px;
       }
 
-      .mailing-list-box {
-        bottom: 18px;
-        width: min(92vw, 360px);
-        border-radius: 22px;
+      nav a {
+        margin-right: 7px;
       }
 
-      .mailing-list-row {
-        flex-direction: column;
+      .signup {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        max-width: none;
       }
 
-      .mailing-list-row button {
+      .signup form {
+        display: block;
+      }
+
+      .signup input,
+      .signup button {
         width: 100%;
+        margin-bottom: 6px;
       }
     }
   </style>
 </head>
 
 <body>
-  <img src="lubrikant-holding.jpeg" alt="Lubrikant holding page">
+  <div class="background"></div>
 
-  <div class="soundcloud-box">
-    <iframe
-      width="100%"
-      height="120"
-      scrolling="no"
-      frameborder="no"
-      allow="autoplay; encrypted-media"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2309946128&color=%23f7f3ea&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
-    </iframe>
+  <main class="page">
+    <div class="top-line">
+      <nav>
+        <a href="about.html">ABOUT</a>
+        <a href="dj-events-cv.html">DJ / EVENTS CV</a>
+        <a href="https://soundcloud.com/volte_face_bleed">SOUNDCLOUD</a>
+        <a href="https://soundcloud.com/volte_face_bleed/sets/lubrikate-your-living-room-a">MIX SERIES</a>
+        <a href="blog.html">BLOG</a>
+      </nav>
 
-    <div class="soundcloud-credit">
-      <a href="https://soundcloud.com/volte_face_bleed" target="_blank">
-        Casper Clark / Volte-Face
-      </a>
-      ·
-      <a href="https://soundcloud.com/volte_face_bleed/nowherefast" target="_blank">
-        Nowhere Fast
-      </a>
+      <span class="main-text">
+        LUBRIKANT ‘EVERYTHING FOR SOMEBODY’
+      </span>
     </div>
-  </div>
+  </main>
 
-  <div class="mailing-list-box">
-    <form
-      action="https://buttondown.com/api/emails/embed-subscribe/Lubrikant"
-      method="post"
-      class="embeddable-buttondown-form"
-    >
-      <label for="bd-email">Sporadic Transmissions</label>
+  <section class="signup">
+    <p>Subscribe for occasional updates.</p>
 
-      <div class="mailing-list-row">
-        <input
-          type="email"
-          name="email"
-          id="bd-email"
-          placeholder="email address"
-          required
-        >
-
-        <input type="hidden" value="1" name="embed">
-
-        <button type="submit">Subscribe</button>
-      </div>
+    <form>
+      <input type="email" placeholder="Email address">
+      <button type="submit">Subscribe</button>
     </form>
-  </div>
+  </section>
 </body>
 </html>
