@@ -17,9 +17,9 @@
       color: #111;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
-      line-height: 1.25;
+      line-height: 1.2;
       position: relative;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     .background {
@@ -36,41 +36,81 @@
       position: relative;
       z-index: 1;
       min-height: 100vh;
-      box-sizing: border-box;
-      padding: 14px 18px 110px 18px;
     }
 
-    .top-line {
-      max-width: 1100px;
-    }
-
-    nav {
-      display: inline;
-    }
-
-    nav a,
-    .main-text a,
-    .signup a {
+    a {
       color: #111;
       text-decoration: underline;
       text-decoration-thickness: 1px;
       text-underline-offset: 2px;
     }
 
-    nav a {
-      margin-right: 10px;
-      white-space: nowrap;
+    .nav-scatter {
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
     }
 
-    .main-text {
-      display: inline;
+    .nav-scatter a {
+      position: absolute;
+      pointer-events: auto;
+      white-space: nowrap;
+      font-size: 16px;
+    }
+
+    .about {
+      top: 18px;
+      left: 18px;
+      transform: rotate(-8deg);
+    }
+
+    .cv {
+      top: 44px;
+      left: 128px;
+      transform: rotate(5deg);
+    }
+
+    .soundcloud {
+      top: 20px;
+      left: 360px;
+      transform: rotate(-3deg);
+    }
+
+    .mix-series {
+      top: 66px;
+      left: 540px;
+      transform: rotate(7deg);
+    }
+
+    .blog {
+      top: 30px;
+      left: 735px;
+      transform: rotate(-10deg);
+    }
+
+    .curved-text {
+      position: fixed;
+      top: 82px;
+      left: 28px;
+      width: 760px;
+      height: 180px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .curved-text text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 24px;
+      fill: #111;
+      letter-spacing: 0.5px;
     }
 
     .signup {
       position: fixed;
       left: 18px;
       bottom: 16px;
-      z-index: 2;
+      z-index: 3;
       max-width: 420px;
       font-size: 15px;
     }
@@ -104,17 +144,66 @@
       cursor: pointer;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
       body {
+        overflow: auto;
+      }
+
+      .background {
+        background-size: cover;
+        background-position: center;
+      }
+
+      .nav-scatter {
+        position: relative;
+        inset: auto;
+        padding: 14px 12px 0 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+      }
+
+      .nav-scatter a {
+        position: static;
         font-size: 15px;
       }
 
-      .page {
-        padding: 12px 12px 150px 12px;
+      .about {
+        transform: rotate(-5deg);
       }
 
-      nav a {
-        margin-right: 7px;
+      .cv {
+        transform: rotate(3deg);
+      }
+
+      .soundcloud {
+        transform: rotate(-2deg);
+      }
+
+      .mix-series {
+        transform: rotate(4deg);
+      }
+
+      .blog {
+        transform: rotate(-6deg);
+      }
+
+      .curved-text {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: 150px;
+        margin-top: 16px;
+      }
+
+      .curved-text text {
+        font-size: 20px;
+      }
+
+      .page {
+        min-height: 100vh;
+        padding-bottom: 160px;
       }
 
       .signup {
@@ -141,19 +230,24 @@
   <div class="background"></div>
 
   <main class="page">
-    <div class="top-line">
-      <nav>
-        <a href="about.html" target="_blank" rel="noopener noreferrer">ABOUT</a>
-        <a href="dj-events-cv.html" target="_blank" rel="noopener noreferrer">DJ / EVENTS CV</a>
-        <a href="PASTE-SOUNDCLOUD-LINK-HERE" target="_blank" rel="noopener noreferrer">SOUNDCLOUD</a>
-        <a href="PASTE-MIX-SERIES-LINK-HERE" target="_blank" rel="noopener noreferrer">MIX SERIES</a>
-        <a href="blog.html" target="_blank" rel="noopener noreferrer">BLOG</a>
-      </nav>
 
-      <span class="main-text">
-        LUBRIKANT ‘EVERYTHING FOR SOMEBODY’
-      </span>
-    </div>
+    <nav class="nav-scatter">
+      <a class="about" href="about.html" target="_blank" rel="noopener noreferrer">ABOUT</a>
+      <a class="cv" href="dj-events-cv.html" target="_blank" rel="noopener noreferrer">DJ / EVENTS CV</a>
+      <a class="soundcloud" href="https://soundcloud.com/volte_face_bleed" target="_blank" rel="noopener noreferrer">SOUNDCLOUD</a>
+      <a class="mix-series" href="https://soundcloud.com/volte_face_bleed/sets/lubrikate-your-living-room" target="_blank" rel="noopener noreferrer">MIX SERIES</a>
+      <a class="blog" href="blog.html" target="_blank" rel="noopener noreferrer">BLOG</a>
+    </nav>
+
+    <svg class="curved-text" viewBox="0 0 760 180" aria-label="Lubrikant Everything for Somebody">
+      <path id="lubrikant-curve" d="M 20 120 C 160 35, 410 20, 735 105" fill="none"></path>
+      <text>
+        <textPath href="#lubrikant-curve" startOffset="0%">
+          LUBRIKANT ‘EVERYTHING FOR SOMEBODY’
+        </textPath>
+      </text>
+    </svg>
+
   </main>
 
   <section class="signup">
