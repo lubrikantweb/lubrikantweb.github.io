@@ -99,14 +99,11 @@
       display: block;
       width: 160px;
       height: auto;
+      transition: transform 0.2s ease;
     }
 
     .bottom-right-photo-link:hover .bottom-right-photo {
       transform: scale(1.03);
-    }
-
-    .bottom-right-photo {
-      transition: transform 0.2s ease;
     }
 
     @media (max-width: 700px) {
@@ -141,15 +138,13 @@
 <body>
 
   <main class="main-logo-wrap">
-    <!-- Replace this filename with your main Lubrikant logo/image -->
     <img 
-      src="lubrikant-logo.png" 
+      src="lubrikant-holding.jpeg.png" 
       alt="Lubrikant" 
       class="main-logo"
     >
   </main>
 
-  <!-- Replace the action URL with your mailing list provider form URL, if using one -->
   <form class="mailing-list-box" action="#" method="post">
     <input 
       type="email" 
@@ -167,7 +162,6 @@
     class="bottom-right-photo-link"
     aria-label="Visit Volte Face Bleed on Instagram"
   >
-   
     <img 
       src="pixelart.png" 
       alt="Volte Face Bleed Instagram" 
