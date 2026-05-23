@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Lubrikant — About</title>
+  <title>Lubrikant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       min-height: 100%;
       background: #f7f3ea;
@@ -14,174 +15,28 @@
 
     body {
       min-height: 100vh;
-      color: #111;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      line-height: 1.25;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    .background {
-      position: fixed;
-      inset: 0;
-      background-image: url("lubrikant-holding.jpeg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: 0;
-    }
-
-    .page {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
+      padding: 24px;
       box-sizing: border-box;
-      padding: 18px 18px 140px 18px;
     }
 
-    a {
-      color: #111;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 42px;
-      transform: rotate(-5deg);
-    }
-
-    h1 {
-      font-size: 16px;
-      font-weight: normal;
-      margin: 0 0 28px 0;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      transform: rotate(2deg);
-      display: inline-block;
-    }
-
-    .about-text {
-      width: calc(100vw - 36px);
-      max-width: none;
-    }
-
-    .about-text p {
-      margin: 0 0 18px 0;
-      max-width: 900px;
-    }
-
-    .signup {
-      position: fixed;
-      left: 18px;
-      bottom: 16px;
-      z-index: 3;
-      max-width: 420px;
-      font-size: 15px;
-    }
-
-    .signup p {
-      margin: 0 0 6px 0;
-    }
-
-    .signup form {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-    }
-
-    .signup input {
-      width: 240px;
+    .about-section {
+      width: 100%;
+      padding: 40px 24px;
       box-sizing: border-box;
-      font: inherit;
-      padding: 5px 7px;
-      border: 1px solid #111;
-      background: rgba(247, 243, 234, 0.75);
-      color: #111;
     }
 
-    .signup button {
-      font: inherit;
-      padding: 5px 8px;
-      border: 1px solid #111;
-      background: rgba(247, 243, 234, 0.75);
-      color: #111;
-      cursor: pointer;
-    }
-
-    @media (max-width: 700px) {
-      body {
-        font-size: 15px;
-      }
-
-      .background {
-        background-size: cover;
-        background-position: center;
-      }
-
-      .page {
-        padding: 14px 12px 180px 12px;
-      }
-
-      .back-link {
-        margin-bottom: 34px;
-      }
-
-      .about-text {
-        width: calc(100vw - 24px);
-      }
-
-      .about-text p {
-        max-width: none;
-      }
-
-      .signup {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        max-width: none;
-      }
-
-      .signup form {
-        display: block;
-      }
-
-      .signup input,
-      .signup button {
-        width: 100%;
-        margin-bottom: 6px;
-      }
+    .about-text-image {
+      display: block;
+      width: min(100%, 900px);
+      height: auto;
+      margin: 0 auto;
     }
   </style>
 </head>
 
 <body>
-  <div class="background"></div>
-
-  <main class="page">
-    <a class="back-link" href="index.html">← BACK</a>
-
-    <section class="about-text">
-      <h1>ABOUT</h1>
-
-      <p>
-Lubrikant is the creative umbrella for Casper Clark, a London based DJ and live events curator. I’ve spent the last 20 years of my life mainly engaging with adventurous electronic music in various ways, from releasing music, curating events and running a label via my own BleeD brand;  as a core part of the teams at Field Day (2006-2019) and Adventures In The Beetroot Field; on the booking committees for Unsound (PL) and Donaufestival (AT); and DJing eclectically under my own name, alongside The Gun’s Nick Stephens as Family Silver and on the deeper side of techno and ambient music as Volte-Face.<br><br>
-
-DJ mixes and heavily researched mixtapes have been my main creative outlet of late, and this website will provide a home for those as well as my guest mix series, Lubrikate Your Living Room and a forthcoming blog/log which will document the art and literature that I’m engaging which at the moment, and musings on anything else that might be on my mind.<br><br>
-
-Please do sign up for the mailing list - I promise the bombardments will be deployed sparingly.      </p>
-    </section>
-  </main>
-
-  <section class="signup">
-    <p>Subscribe for occasional updates.</p>
-
-    <form>
-      <input type="email" placeholder="Email address">
-      <button type="submit">Subscribe</button>
-    </form>
+  <section class="about-section">
+    <img src="about-text.png" alt="About text" class="about-text-image">
   </section>
 </body>
 </html>
