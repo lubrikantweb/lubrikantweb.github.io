@@ -42,7 +42,7 @@ body {
     transform-origin: center center;
   }
 }
-    .pixelart-dj-scream-link {
+   .pixelart-dj-scream-link {
   position: fixed;
   right: 24px;
   bottom: 24px;
@@ -65,15 +65,29 @@ body {
   transform: scale(1.03);
 }
 
-/* Better mobile version */
 @media (max-width: 700px) {
   .pixelart-dj-scream-link {
+    position: fixed;
     right: 14px;
     bottom: 14px;
+    z-index: 20;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .pixelart-dj-scream {
     width: 138px; /* 15% bigger than 120px */
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease;
+    transform-origin: center center;
+  }
+
+  .pixelart-dj-scream-link:active .pixelart-dj-scream,
+  .pixelart-dj-scream-link:focus-visible .pixelart-dj-scream {
+    transform: scale(1.03);
   }
 }
   </style>
