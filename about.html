@@ -45,6 +45,29 @@
       margin: 0 auto;
     }
 
+    .pixelart-dj-scream-link {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 20;
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .pixelart-dj-scream {
+      display: block;
+      width: 253px;
+      height: auto;
+      transition: transform 0.2s ease;
+      transform-origin: center center;
+    }
+
+    .pixelart-dj-scream-link:hover .pixelart-dj-scream,
+    .pixelart-dj-scream-link:focus-visible .pixelart-dj-scream {
+      transform: scale(1.03);
+    }
+
     @media (max-width: 700px) {
       .page {
         padding: 14px 12px 120px 12px;
@@ -55,6 +78,21 @@
         max-width: none;
         height: auto;
         margin: 0 auto;
+      }
+
+      .pixelart-dj-scream-link {
+        right: 14px;
+        bottom: 14px;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .pixelart-dj-scream {
+        width: 138px;
+      }
+
+      .pixelart-dj-scream-link:active .pixelart-dj-scream,
+      .pixelart-dj-scream-link:focus-visible .pixelart-dj-scream {
+        transform: scale(1.03);
       }
     }
   </style>
@@ -70,5 +108,17 @@
       class="about-text-image"
     >
   </main>
+
+  <a 
+    href="index.html"
+    class="pixelart-dj-scream-link"
+    aria-label="Back to main page"
+  >
+    <img 
+      class="pixelart-dj-scream" 
+      src="pixelart-dj-scream.png" 
+      alt="Back to main page"
+    >
+  </a>
 </body>
 </html>
