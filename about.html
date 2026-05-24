@@ -42,6 +42,23 @@ body {
     transform-origin: center center;
   }
 }
+    .pixelart-dj-scream {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 220px;
+  height: auto;
+  z-index: 20;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .pixelart-dj-scream {
+    right: 14px;
+    bottom: 14px;
+    width: 120px;
+  }
+}
   </style>
 </head>
 
@@ -49,5 +66,10 @@ body {
   <section class="about-section">
     <img src="about-text.png" alt="About text" class="about-text-image">
   </section>
+  <img 
+  class="pixelart-dj-scream" 
+  src="pixelart-dj-scream.png" 
+  alt="Pixel art DJ and crowd scene"
+>
 </body>
 </html>
